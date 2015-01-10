@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!--menambahkan libary jquery kefile project-->
+   <script src="qrc:///js/jquery.js"></script>
+   <script src="qrc:///js/bootstrap.js"></script>
+   <script src="qrc:///js/bootstrap-reponsive.js"></script>
+   <link href="qrc:///css/bootstrap.css" rel="stylesheet">
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <script>
+      adhiguna.setDev(true);
+      adhiguna.setDevRemote(8080);
+      var sys = adhiguna.sys()
+      $(function(){
+        $('#req').click(function(){
+            //init system module
+            var sys = adhiguna.sys();
+            var input = $('#inputval').val();
+          $('#res').html(sys.cliOut(input));
+        });
+      })
+    </script>
+    <script>
+		var fs = adhiguna.filesystem();
+		function makeDir (opt,path){
+			var fs = adhiguna.filesystem();
+			if (opt=='create'){
+				adhiguna.showMessage('Created');
+			}
+			else if (opt=='remove'){
+				adhiguna.showMessage('remove');
+			}
+			fs.dir(opt,path);
+			return fs;
+		}
+    </script>
+  </head>
+  <body>
+  <h1>Widget</h1><hr>
+    <input class="btn btn-primary" type="submit" onclick="adhiguna.showMessage('Testing Messages')" value="Message Box">
+   <input class="btn btn-primary" type="submit" onclick="adhiguna.notificationWarning('Warning','Halo Boy Ini Dari Program Kita')" value="Notification">
+    <input class="btn btn-primary" type="submit" onclick="adhiguna.quit()" value="Close">
+    <INPUT class="btn btn-primary" type="submit" onclick="adhiguna.reload()" value="Reload Right Click Active">
+    <input class="btn btn-primary" type="submit" onclick="adhiguna.getToggleFullScreen()" value="Fullscreen">
+    <input class="btn btn-primary" type="submit" onclick="adhiguna.showMaximized()" value="Maximize window">
+    <input class="btn btn-primary" type="submit" onclick="adhiguna.showMinimized()" value="Minimize window">
+    <input class="btn btn-primary" type="submit" onclick="makeDir('create','/home/igos/CREATEBYADG')" value="MAKE DIR"> <!-- Set To Path example /home/igos/CREATEBYADG -->
+    <input class="btn btn-primary" type="submit" onclick="makeDir('remove','/home/igos/CREATEBYADG')" value="REMOVE DIR"><!-- Set To Path example /home/igos/CREATEBYADG -->
+    <br><br>
+    <input type='text' id='inputval' value=''>
+    <input class="btn btn-primary" type="submit" id="req" value="cli Output">
+    <h1>Output</h1><hr>
+    <div id="res"></div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+## Create Manifest
+```
+Adalah kumpulan API adhiguna SDK yang di JSON Kan
+contoh :
+{
+  "config" : { "debug" : true,
+    "websecurity" : true,
+    "name" : "Calculator" },
+  "window" : { 
+	"transparent" : false, 
+	"noframe" : false, 
+	"fullscreen" : false,
+	"width":"240", "height":"350" 
+	 },
+  "button" : [
+			]
+}
+```

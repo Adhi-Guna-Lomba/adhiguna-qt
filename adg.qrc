@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>js/adhiguna.js</file>
+        <file>js/builtin.js</file>
+        <file>js/include.js</file>
+        <file>js/jquery.js</file>
+        <file>js/skulpt.js</file>
+        <file>icon/warning.png</file>
+        <file>icon/info.png</file>
+        <file>css/adhiguna.css</file>
+        <file>icon/desktop.ico</file>
+    </qresource>
+</RCC>

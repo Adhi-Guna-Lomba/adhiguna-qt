@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function dir(path,option){
+		  var fs = adhiguna.filesystem();
+		  var dir = adhiguna.homePath()+"/"+path;
+		  switch(option){
+			  case "create":
+				if(fs.dir("create",dir)){
+					adhiguna.showMessage('Directory Has been created');
+				  }
+				  else {
+					adhiguna.showMessage('GATOT');
+				  }
+			  break;
+			  case "delete":
+				if(ign.rmdir(dir)){
+					alert("directory has been delete");
+				  }
+				  else {
+					alert("failed! delete directory.");
+				  }
+			  break;
+			  case "exist":
+				if(ign.dirExist(dir)){
+					alert("directory is exist!");
+				  }
+				  else {
+					alert("directory is not exist!");
+				  }
+			  break;
+		  }
+	  }
+	  
+	  function mkdir(){
+		  dir(document.getElementById('dir').value,'create');
+	  }
+	  
+	  function rmdir(){
+		  dir(document.getElementById('dir').value,'delete');
+	  }
+	  
+	  function exist(){
+		  dir(document.getElementById('dir').value,'exist');
+	  }
+    </script>
+  </head>
+  <body>
+	<b>Name :</b> <input type="text" id="dir" value="createbySDK">
+	<h2>mkdir()</h2><br>
+	<input type="submit" onclick="mkdir()" value="Create Directory">
+	<br>
+	<h2>rmdir()</h2><br>
+	<input type="submit" onclick="rmdir()" value="remove Directory">
+	<br>
+	<h2>dirExist()</h2><br>
+	<input type="submit" onclick="exist()" value="Check Directory">
+	<br>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tetris5</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="initial-scale=1,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link type="text/css" rel="stylesheet" href="css/com.css" />
+	<link type="text/css" rel="stylesheet" href="css/game.css" />
+</head>
+<body>
+	<div id="cubeFrame">
+		<div id="cubeReel">
+			<div id="cubeHelp">
+				<h1>Help</h1>
+				<div id="helpContent">
+					
+				</div>
+				<div id="helpControl">
+					<div id="helpInfo">
+						<input class="button btnMenu" type="submit" onclick="adhiguna.showMessage('By KBSAGP')" value="About">
+					</div>
+					<div class="button btnMenu">Back</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div id="cubeRank">
+				<h1>Rank</h1>
+				<div id="rankNav" class="right">
+				</div>
+				<div id="rankList">
+					<ul>
+						<li id="list1">
+							<div class="name">Name</div>
+							<div class="result">S: xxxx | L: xx | T: xxxxx s</div>
+						</li>
+						<li id="list2">
+							<div class="name">Name</div>
+							<div class="result">S: xxxx | L: xx | T: xxxxx s</div>
+						</li>
+						<li id="list3">
+							<div class="name"></div>
+							<div class="result"></div>
+						</li>
+						<li id="list4">
+							<div class="name">Name</div>
+							<div class="result">S: xxxx | L: xx | T: xxxxx s</div>
+						</li>
+						<li id="list5">
+							<div class="name">Name</div>
+							<div class="result">S: xxxx | L: xx | T: xxxxx s</div>
+						</li>
+					</ul>
+				</div>
+				<div id="rankControl">
+					<div id="rankInfo">
+					</div>
+					<div class="button btnMenu">Back</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div id="cubeMenu">
+				<header>
+					<h1>Tetris</h1>
+				</header>
+				<div id="menuLoading">
+					Loading...
+				</div>
+				<div id="menuControl">
+					<div id="btnRed" class="button btnStart"></div>
+					<div id="btnGreen" class="button btnPause"></div>
+					<div id="btnYellow" class="button btnRank"></div>
+					<div class="button btnHelp"></div>
+					<div class="button btnMute"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div id="cubeGame">
+				<div class="floatLeft">
+					<canvas id="canvasGame" width="180" height="360">
+					</canvas>
+				</div>
+				<!--<div class="floatLeft">
+					<div id="divGame"></div>
+				</div>-->
+				<div id="gameInfo" class="floatLeft center">
+					<div id="gameNextLabel" class="gameLabel">
+						Next:
+					</div>
+					<canvas id="canvasNext" width="100" height="55">
+					</canvas>
+					<div id="gameScoreLabel" class="gameLabel">
+						Score:
+					</div>
+					<div id="gameScore" class="gameText">
+					</div>
+					<div id="gameLevelLabel" class="gameLabel">
+						Level:
+					</div>
+					<div id="gameLevel" class="gameText">
+					</div>
+					<div id="gameTimeLabel" class="gameLabel">
+						Time:
+					</div>
+					<div id="gameTime" class="gameText">
+					</div>
+					<div id="gameControl">
+						<div class="button btnPause"></div>
+						<div class="button btnMute"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div id="debug">
+	
+	</div>
+	<div id="footer">
+		<div>
+			<input class="button btnMenu" type="submit" onclick="adhiguna.showMinimized()" value="Min">
+			<input class="button btnMenu" type="submit" onclick="adhiguna.quit()" value="Quit">
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.color.js"></script>
+	<script type="text/javascript" src="js/modernizr-1.6.min.js"></script>
+	<script type="text/javascript" src="js/Block.min.js"></script>
+	<script type="text/javascript" src="js/Game.min.js"></script>
+	<script type="text/javascript" src="js/GameUI.min.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+		$(function(){
+			var game = GameUI;
+			game.setAni(true);
+			game.init();
+		});
+		
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-5927560-4']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	//]]>
+	</script>
+</body>
+</html>

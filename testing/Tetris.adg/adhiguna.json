@@ -1,0 +1,13 @@
+{
+  "config" : { "debug" : true,
+    "websecurity" : true,
+    "name" : "Tetris-AdhigunaSDK" },
+  "window" : { 
+	"transparent" : false, 
+	"noframe" : false, 
+	"fullscreen" : false,
+	"width":"337", "height":"475" 
+	 },
+  "button" : [
+			]
+}

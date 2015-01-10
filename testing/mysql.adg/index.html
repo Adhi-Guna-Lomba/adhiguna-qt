@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="qrc:///js/jquery.js"></script>
+<script type="text/javascript" src="qrc:///js/ign.js"></script>
+<script>
+$(document).ready(function(){
+	var sql = adhiguna.sql();
+	var driver = sql.driver("mysql","localhost:root:qazwsx:qt");
+	var qry = sql.query("select * from peserta");
+	if(driver){
+		$(".json").html(JSON.stringify(qry));
+		var query = qry;
+		var html = "";
+		$("h1").html("Status Database Connection : "+query.status);
+		if(query.status){
+			$.each(query.content,function(data){
+				html += "No : "+this.no+"<br>";
+				html += "Nama : "+this.nama+"<br>";
+				html += "Alamat : "+this.alamat+"<br><hr>";
+			});
+		}
+		
+		$(".data").html(html);
+	}
+});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<h2>JSON Data</h2>
+	<div class="json"></div><hr>
+	<h2>Data</h2>
+	<div class="data"></div>
+</body>
+</html>
